@@ -1,23 +1,5 @@
-const panels = document.querySelectorAll('.panel')
-
-panels.forEach((panel) => {
-  panel.addEventListener('click', () => {
-    removeActiveClasses()
-    panel.classList.add('active')
-  })
-})
-
-const removeActiveClasses = () => {
-  panels.forEach((panel) => {
-    panel.classList.remove('active')
-  })
-}
-
-/* 
-AS A REACT COMPONENT
-
 import React, { useState } from 'react';
-import './PanelComponent.css'; === styles.css
+import './PanelComponent.css'
 import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
 
 const PanelComponent = () => {
@@ -50,6 +32,7 @@ const panels = [
     }
   ];
 
+
 return (
 <div>
 {panels.map((panel, index) => (
@@ -58,21 +41,19 @@ key={index}
 className={`panel ${index === activePanel ? 'active' : ''}`}
 style={{backgroundImage: `url(${panel.imageUrl})`}}
 onClick={()=> handleClick(index)}> 
-<h3>{panel.title)</h3>
+<h3>{panel.title}</h3>
 </div>
 
 ))}
 
 </div>
+)}
 
 export default PanelComponent
 
 
-</div>
-
-)
 
 
-}
 
-*/
+
+
