@@ -71,6 +71,10 @@ body {
     transition-delay: 0.3s;
 }
 
+.container.show-nav .circle {
+    transform: rotate(-70deg);
+}
+
 nav {
   position: fixed;
   bottom: 40px;
