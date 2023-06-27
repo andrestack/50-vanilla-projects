@@ -23,7 +23,6 @@ const HiddenSearch = () => {
 
 export default HiddenSearch;
 
-//is useRef better to get form data than useState?
-// Path: HiddenSearch.css
+
 
 
