@@ -5,7 +5,7 @@ const ScrollingBoxes = () => {
 
     useEffect(() => {
         const checkBoxes = () => {
-            const triggerBottom = window.innerHeight / 5 * 4;
+            const triggerBottom = window.innerHeight * 0.8;
             
             if(window.scrollY > triggerBottom) {
                 setShowBox(true);
