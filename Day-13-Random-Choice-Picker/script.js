@@ -13,17 +13,18 @@ textarea.addEventListener('keyup', (e) => {
   }
   randomSelect()
 })
-
+//
 function createTags(input) {
+  // create tags from input value and add to DOM
   const tags = input
-    .split(',')
-    .filter((tag) => tag.trim() !== '')
-    .map((tag) => tag.trim())
+    .split(',') // split input value by comma
+    .filter((tag) => tag.trim() !== '') // remove empty tags
+    .map((tag) => tag.trim()) // remove whitespace from tags
   console.log(tags)
 
   tagsEl.innerHTML = ''
 
-  //   create tags
+  //   create tags and add to DOM
   tags.forEach((tag) => {
     const tagEl = document.createElement('span')
     tagEl.classList.add('tag')
@@ -35,9 +36,9 @@ function createTags(input) {
 
 // random select
 function randomSelect() {
-  const times = 30
+  const times = 30 // number of times to highlight tags
   const interval = setInterval(() => {
-    const randomTag = pickRandomTag()
+    const randomTag = pickRandomTag() // pick random tag and highlight it for 100ms
 
     highlightTag(randomTag)
 
@@ -49,8 +50,8 @@ function randomSelect() {
   setTimeout(() => {
     clearInterval(interval) // stop interval
 
-    setTimeout(() => {
-      // pick random tag
+    setTimeout(() => {//
+      // pick random tag and highlight it for 100ms after interval stops
       const randomTag = pickRandomTag()
       highlightTag(randomTag)
     }, 100)
@@ -59,7 +60,8 @@ function randomSelect() {
 
 function pickRandomTag() {
   const tags = document.querySelectorAll('.tag') // select all tags
-  return tags[Math.floor(Math.random() * tags.length)] // return a random tag
+  return tags[Math.floor(Math.random() * tags.length)] 
+  // return a random tag from tags array using Math.random() and Math.floor() methods to get a random number between 0 and tags.length - 1
 }
 
 function highlightTag(tag) {
