@@ -30,6 +30,8 @@ async function getRepos(username) {
 }
 
 function createUserCard(user) {
+  const userID = user.name || user.login;
+  const userBio = user.bio ? `<p>${user.bio}</p>` : "";
   const cardHTML = `<div class="card">
 <div>
   <img
@@ -38,10 +40,10 @@ function createUserCard(user) {
   />
 </div>
 <div class="user-info">
-  <h2>${user.name}</h2>
-  <p>
-    ${user.bio}
-  </p>
+  <h2>${userID}</h2>
+  
+    ${userBio}
+
   <ul>
     <li>${user.followers} <strong>Followers</strong></li>
     <li>${user.following} <strong>Following</strong></li>
@@ -65,9 +67,7 @@ function createErrorCard(msg) {
 
 function addReposToCard(repos) {
   const reposEl = document.getElementById("repos");
-  repos
-  .slice(0, 5)
-  .forEach((repo) => {
+  repos.slice(0, 5).forEach((repo) => {
     const repoEl = document.createElement("a");
     repoEl.classList.add("repo");
     repoEl.href = repo.html_url;
