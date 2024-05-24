@@ -101,7 +101,7 @@ main {
     bottom: 0;
     right: 0;
     max-height: 100%;
-    transform:translateY(101%);
+    transform:translateY(100%);
 }
 
 .movie:hover .overview{
